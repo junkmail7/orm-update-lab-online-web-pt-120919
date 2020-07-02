@@ -51,7 +51,7 @@ class Student
       name = row[1]
       grade = row[2]
       self.new(id, name, grade)
-    end 
+    end
 
     def self.drop_table
       sql = <<-SQL
