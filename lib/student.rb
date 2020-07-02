@@ -37,6 +37,14 @@ class Student
       song
     end
 
+    def self.drop_table
+      sql = <<-SQL
+        DROP TABLE students
+      SQL
+
+      DB[:conn].execute(sql)
+    end
+
     def self.find_by_name(name)
       sql = "SELECT * FROM songs WHERE name = ?"
       result = DB[:conn].execute(sql, name)[0]
